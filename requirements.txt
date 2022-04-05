@@ -17,6 +17,7 @@ PyJWT==2.3.0
 python-dateutil==1.5
 pytz==2022.1
 requests==2.27.1
+sentry-sdk==1.5.8
 sqlparse==0.4.2
 tzdata==2022.1
 urllib3==1.26.9
