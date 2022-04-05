@@ -1,9 +1,14 @@
 from django.contrib import admin
-
+from basic_app import models
 # Register your models here.
+admin.site.register(models.Zakaz)
+admin.site.register(models.Naduvnie)
+admin.site.register(models.Kansultatsi)
+admin.site.register(models.Karkas)
+# admin.site.register(models.CustomUser)
 from django.contrib.auth.admin import UserAdmin
 
-from basic_app import models
+
 
 
 class CustomUserAdmin(UserAdmin):
