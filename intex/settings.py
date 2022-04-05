@@ -155,7 +155,7 @@ USE_TZ = True
 AUTH_USER_MODEL = 'basic_app.CustomUser'
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
-
+#dsa
 STATIC_ROOT = os.path.join(BASE_DIR, '/staticfiles')
 STATIC_URL = 'static/'
 
