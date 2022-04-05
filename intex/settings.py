@@ -153,7 +153,7 @@ USE_I18N = True
 
 USE_TZ = True
 
-# AUTH_USER_MODEL = 'basic_app.CustomUser'
+AUTH_USER_MODEL = 'basic_app.CustomUser'
 
 
 # Static files (CSS, JavaScript, Images)
