@@ -51,8 +51,6 @@ def __str__(self):
     return f'{self.username}'
 
 
-# Karkasni
-
 class Karkas(models.Model):
     image = models.ImageField(upload_to='images/')
     latestCost = models.CharField(max_length=200)
@@ -87,7 +85,6 @@ class Zakaz(models.Model):
 
     def __str__(self):
         return self.client_name
-
 
 
 class Kansultatsi(models.Model):
