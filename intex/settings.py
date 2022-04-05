@@ -63,6 +63,8 @@ TEMPLATES = [
         },
     },
 ]
+AUTH_USER_MODEL = 'basic_app.CustomUser'
+
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework_simplejwt.authentication.JWTAuthentication',
@@ -76,6 +78,7 @@ REST_FRAMEWORK = {
     ]
 }
 APPEND_SLASH = False
+
 SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(minutes=120),
     'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
@@ -153,12 +156,9 @@ USE_I18N = True
 
 USE_TZ = True
 
-AUTH_USER_MODEL = 'basic_app.CustomUser'
-
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
-#dsa
+# dsa
 STATIC_ROOT = os.path.join(BASE_DIR, '/staticfiles')
 STATIC_URL = 'static/'
 
