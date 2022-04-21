@@ -7,7 +7,7 @@ from django.conf import settings
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 TEMPLATES_DIRS = (os.path.join(BASE_DIR, 'templates'),)
-import django_heroku
+# import django_heroku
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
@@ -18,8 +18,23 @@ SECRET_KEY = 'django-insecure-qzevg5sqr*1c4+x69vwp9dx6)0o+55v40)p22x$c&^kplyj0i%
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['intexmarketing.herokuapp.com']
+ALLOWED_HOSTS = ['*']
 
+CORS_ALLOWED_ORIGINS = [
+
+    "https://google.com",
+    "http://localhost:8080",
+    "http://localhost:3000",
+    "http://localhost:3000/",
+    "https://intex-market.uz",
+    "http://intex-market.uz",
+    "https://admin.intex-market.uz",
+    "https://www.intex-market.uz",
+    "https://admin-intex-market.netlify.app/",
+    "https://admin-intex-market.netlify.app/login",
+
+]
+CORS_ALLOW_ALL_ORIGINS = True
 # Application definition
 
 INSTALLED_APPS = [
@@ -33,6 +48,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework_simplejwt',
     'django_cleanup',
+    'django_filters'
 ]
 
 MIDDLEWARE = [
@@ -72,9 +88,10 @@ REST_FRAMEWORK = {
 
     ],
     'DEFAULT_PERMISSION_CLASSES': [
-        # 'rest_framework.permissions.IsAuthenticated',
+        'rest_framework.permissions.IsAuthenticated',
 
-    ]
+    ],
+    'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend', ],
 }
 APPEND_SLASH = False
 
@@ -119,12 +136,6 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-CORS_ALLOWED_ORIGINS = [
-    "https://herokuapp.com",
-    "https://google.com",
-    "http://localhost:8080",
-    "http://127.0.0.1:8080",
-]
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
@@ -155,12 +166,9 @@ USE_I18N = True
 
 USE_TZ = True
 
-
-
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
-#dsa
+# dsa
 STATIC_ROOT = os.path.join(BASE_DIR, '/staticfiles')
 STATIC_URL = 'static/'
 
@@ -174,4 +182,4 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-django_heroku.settings(locals())
+# django_heroku.settings(locals())

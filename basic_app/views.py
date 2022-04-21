@@ -1,9 +1,9 @@
-
 # Create your views here.
 from django.contrib.auth import authenticate
 from django.shortcuts import render
+from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework.response import Response
-from rest_framework import generics
+from rest_framework import generics, filters
 
 from . import serializers, models
 
@@ -46,10 +46,16 @@ class ListZakaz(generics.ListCreateAPIView):
     queryset = models.Zakaz.objects.all()
     serializer_class = serializers.ZakazSerializer
 
+    filter_backends = [filters.SearchFilter]
+    search_fields = ['date_time']
 
-class DetailZakaz(generics.ListCreateAPIView):
+
+class DetailZakaz(generics.RetrieveUpdateDestroyAPIView):
     queryset = models.Zakaz.objects.all()
     serializer_class = serializers.ZakazSerializer
+
+    filter_backends = [filters.SearchFilter]
+    search_fields = ['date_time']
 
 
 class ListKonsultatsi(generics.ListCreateAPIView):
@@ -94,3 +100,23 @@ class GetCustomToken(generics.GenericAPIView):
                 print(e)
             return Response({'detail': 'User topilmadi, qaytadan urinib ko\'ring'})
         return Response(admin.errors)
+
+
+class ListKategoriya(generics.ListCreateAPIView):
+    queryset = models.Kategoriya.objects.all()
+    serializer_class = serializers.KategotiyaSerializer
+
+
+class DetailKategoriya(generics.RetrieveUpdateDestroyAPIView):
+    queryset = models.Kategoriya.objects.all()
+    serializer_class = serializers.KategotiyaSerializer
+
+
+class ListAsosiy(generics.ListCreateAPIView):
+    queryset = models.Asosiy.objects.all()
+    serializer_class = serializers.AsosiySerializer
+
+
+class DetailAsosiy(generics.RetrieveUpdateDestroyAPIView):
+    queryset = models.Asosiy.objects.all()
+    serializer_class = serializers.AsosiySerializer
