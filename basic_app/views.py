@@ -1,5 +1,6 @@
 # Create your views here.
 from django.contrib.auth import authenticate
+from django.db.models import Count
 from django.shortcuts import render
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework.response import Response
@@ -23,8 +24,12 @@ class DetailCustomUser(generics.RetrieveUpdateDestroyAPIView):
 
 
 class ListKarkas(generics.ListCreateAPIView):
-    queryset = models.Karkas.objects.all()
+    queryset = models.Karkas.objects.filter(nechtaligi__gte=1)
+    # queryset1 = models.Karkas.objects.filter('ramkaRu')
     serializer_class = serializers.KarkasSerializer
+
+    # print(queryset)
+    # print(queryset1)
 
 
 class DetailKarkas(generics.RetrieveUpdateDestroyAPIView):
@@ -43,8 +48,21 @@ class DetailNaduvnie(generics.RetrieveUpdateDestroyAPIView):
 
 
 class ListZakaz(generics.ListCreateAPIView):
+    # queryset = models.Zakaz.objects.filter(active='True')
     queryset = models.Zakaz.objects.all()
     serializer_class = serializers.ZakazSerializer
+
+    # m = models.Karkas.objects.filter(nechtaligi__gte=1)
+    #
+    # print(queryset)
+    # a = models.Zakaz.objects.filter(active="True").count()
+    # print(a)
+    # if queryset:
+    #     a1 = a - 1
+    #
+    #     print(a1)
+    #     v = models.Zakaz.objects.filter().delete()
+    #     print(a1)
 
     filter_backends = [filters.SearchFilter]
     search_fields = ['date_time']
@@ -120,3 +138,13 @@ class ListAsosiy(generics.ListCreateAPIView):
 class DetailAsosiy(generics.RetrieveUpdateDestroyAPIView):
     queryset = models.Asosiy.objects.all()
     serializer_class = serializers.AsosiySerializer
+
+
+class ListCustoms(generics.ListCreateAPIView):
+    queryset = models.Customs.objects.all()
+    serializer_class = serializers.CustomsSerializer
+
+
+class DetailCustoms(generics.RetrieveUpdateDestroyAPIView):
+    queryset = models.Customs.objects.all()
+    serializer_class = serializers.CustomsSerializer

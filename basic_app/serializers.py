@@ -1,7 +1,7 @@
 from rest_framework import serializers
 
 from . import models
-from .models import CustomUser, Karkas, Naduvnie, Zakaz, Kansultatsi, Kategoriya, Asosiy
+from .models import CustomUser, Karkas, Naduvnie, Zakaz, Kansultatsi, Kategoriya, Asosiy, Customs
 
 
 class UserSerializer(serializers.Serializer):
@@ -56,4 +56,12 @@ class KategotiyaSerializer(serializers.ModelSerializer):
 class AsosiySerializer(serializers.ModelSerializer):
     class Meta:
         model = Asosiy
+        fields = '__all__'
+
+
+#
+
+class CustomsSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Customs
         fields = '__all__'

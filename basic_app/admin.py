@@ -8,6 +8,8 @@ admin.site.register(models.Kansultatsi)
 admin.site.register(models.Karkas)
 admin.site.register(models.Kategoriya)
 admin.site.register(models.Asosiy)
+admin.site.register(models.Customs)
+
 from django.contrib.auth.admin import UserAdmin
 
 

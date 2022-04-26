@@ -51,14 +51,14 @@ def __str__(self):
     return f'{self.username}'
 
 
-
 class Kategoriya(models.Model):
     title = models.CharField(max_length=300, verbose_name='kategoryuzRU')
     description = models.CharField(max_length=400, verbose_name='kategoryruUZ')
-    CategoriyaName = models.CharField(max_length=200,  default='none')
+    CategoriyaName = models.CharField(max_length=200, default='none')
 
     def __str__(self):
         return self.title
+
 
 class Karkas(models.Model):
     img = models.ImageField(upload_to='images/', null=False, blank=False)
@@ -68,16 +68,16 @@ class Karkas(models.Model):
     ramkaRu = models.CharField(max_length=200, null=False)
     razmer = models.CharField(max_length=300, null=False)
     chuqurligi = models.CharField(max_length=300, null=False)
-    commentUZ = models.TextField(max_length=3000, null=False , verbose_name='commentUZ')
-    commentRU = models.TextField(max_length=3000, null=False , verbose_name='commentRU')
+    commentUZ = models.TextField(max_length=3000, null=False, verbose_name='commentUZ')
+    commentRU = models.TextField(max_length=3000, null=False, verbose_name='commentRU')
     ramkaUz = models.CharField(max_length=20, null=False)
-    kamplektatsiyARu1 = models.CharField(max_length=200, null=False, verbose_name ='kamplektatsiyARu1')
-    kamplektatsiyAUz = models.CharField(max_length=200, null=False, verbose_name ='kamplektatsiyAUz')
-    categoriya = models.CharField(max_length=200, null=False) # agar null False bolsa toldirish majburiy boladi
-    modul = models.ForeignKey(Kategoriya,on_delete=models.CASCADE, null=False)
+    kamplektatsiyARu1 = models.CharField(max_length=200, null=False, verbose_name='kamplektatsiyARu1')
+    kamplektatsiyAUz = models.CharField(max_length=200, null=False, verbose_name='kamplektatsiyAUz')
+    categoriya = models.CharField(max_length=200, null=False)  # agar null False bolsa toldirish majburiy boladi
+    modul = models.ForeignKey(Kategoriya, on_delete=models.CASCADE, null=False)
 
     def __str__(self):
-        return self.hozirgiNarh
+        return self.nechtaligi
 
 
 class Naduvnie(models.Model):
@@ -98,6 +98,15 @@ class Naduvnie(models.Model):
         return self.hozirgiNarh
 
 
+class Customs(models.Model):
+    name = models.CharField(max_length=30)
+    phone = models.CharField(max_length=40)
+    address = models.CharField(max_length=50)
+
+    def __str__(self):
+        return self.name
+
+
 class Zakaz(models.Model):
     client_name = models.CharField(max_length=200)
     telNumber = models.CharField(max_length=200)
@@ -107,10 +116,11 @@ class Zakaz(models.Model):
     date_time = models.DateField()
     image = models.ImageField(upload_to='images/')
     active = models.BooleanField(default=False)
-
+    product_name = models.ForeignKey(Karkas, on_delete=models.CASCADE)
+    customer = models.ForeignKey(Customs, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.client_name
+        return f'{self.active}'
 
 
 class Kansultatsi(models.Model):
@@ -118,12 +128,14 @@ class Kansultatsi(models.Model):
     telNumberKlent = models.CharField(max_length=300)
     date_time = models.DateField()
     active = models.BooleanField(default=False)
+
     def __str__(self):
         return self.name_Klent
 
+
 class Asosiy(models.Model):
     adminTel = models.CharField(max_length=100, null=False)
-    telegramLink= models.URLField(max_length=100, null=False)
+    telegramLink = models.URLField(max_length=100, null=False)
     instagramLink = models.URLField(max_length=100, null=False)
     ishVaqtiRU = models.CharField(max_length=100, null=False)
     ishVaqtiUZ = models.CharField(max_length=100, null=False)
