@@ -1,0 +1,1551 @@
+openapi: 3.0.2
+info:
+  title: ''
+  version: ''
+paths:
+  /user:
+    get:
+      operationId: listCustomUsers
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/User1'
+          description: ''
+      tags:
+      - user
+    post:
+      operationId: createCustomUser
+      description: ''
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User1'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/User1'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/User1'
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User1'
+          description: ''
+      tags:
+      - user
+  /user/{id}:
+    get:
+      operationId: retrieveCustomUser
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this custom user.
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User1'
+          description: ''
+      tags:
+      - user
+    put:
+      operationId: updateCustomUser
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this custom user.
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User1'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/User1'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/User1'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User1'
+          description: ''
+      tags:
+      - user
+    patch:
+      operationId: partialUpdateCustomUser
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this custom user.
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User1'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/User1'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/User1'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User1'
+          description: ''
+      tags:
+      - user
+    delete:
+      operationId: destroyCustomUser
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this custom user.
+        schema:
+          type: string
+      responses:
+        '204':
+          description: ''
+      tags:
+      - user
+  /product:
+    get:
+      operationId: listKarkas
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Karkas'
+          description: ''
+      tags:
+      - product
+    post:
+      operationId: createKarkas
+      description: ''
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Karkas'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Karkas'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Karkas'
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Karkas'
+          description: ''
+      tags:
+      - product
+  /product/{id}:
+    get:
+      operationId: retrieveKarkas
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this karkas.
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Karkas'
+          description: ''
+      tags:
+      - product
+    put:
+      operationId: updateKarkas
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this karkas.
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Karkas'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Karkas'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Karkas'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Karkas'
+          description: ''
+      tags:
+      - product
+    patch:
+      operationId: partialUpdateKarkas
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this karkas.
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Karkas'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Karkas'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Karkas'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Karkas'
+          description: ''
+      tags:
+      - product
+    delete:
+      operationId: destroyKarkas
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this karkas.
+        schema:
+          type: string
+      responses:
+        '204':
+          description: ''
+      tags:
+      - product
+  /naduvnie:
+    get:
+      operationId: listNaduvnies
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Naduvnie'
+          description: ''
+      tags:
+      - naduvnie
+    post:
+      operationId: createNaduvnie
+      description: ''
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Naduvnie'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Naduvnie'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Naduvnie'
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Naduvnie'
+          description: ''
+      tags:
+      - naduvnie
+  /naduvnie/{id}:
+    get:
+      operationId: retrieveNaduvnie
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this naduvnie.
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Naduvnie'
+          description: ''
+      tags:
+      - naduvnie
+    put:
+      operationId: updateNaduvnie
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this naduvnie.
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Naduvnie'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Naduvnie'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Naduvnie'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Naduvnie'
+          description: ''
+      tags:
+      - naduvnie
+    patch:
+      operationId: partialUpdateNaduvnie
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this naduvnie.
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Naduvnie'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Naduvnie'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Naduvnie'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Naduvnie'
+          description: ''
+      tags:
+      - naduvnie
+    delete:
+      operationId: destroyNaduvnie
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this naduvnie.
+        schema:
+          type: string
+      responses:
+        '204':
+          description: ''
+      tags:
+      - naduvnie
+  /zakaz:
+    get:
+      operationId: listZakazs
+      description: ''
+      parameters:
+      - name: search
+        required: false
+        in: query
+        description: A search term.
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Zakaz'
+          description: ''
+      tags:
+      - zakaz
+    post:
+      operationId: createZakaz
+      description: ''
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Zakaz'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Zakaz'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Zakaz'
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Zakaz'
+          description: ''
+      tags:
+      - zakaz
+  /zakaz/{id}:
+    get:
+      operationId: retrieveZakaz
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this zakaz.
+        schema:
+          type: string
+      - name: search
+        required: false
+        in: query
+        description: A search term.
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Zakaz'
+          description: ''
+      tags:
+      - zakaz
+    put:
+      operationId: updateZakaz
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this zakaz.
+        schema:
+          type: string
+      - name: search
+        required: false
+        in: query
+        description: A search term.
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Zakaz'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Zakaz'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Zakaz'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Zakaz'
+          description: ''
+      tags:
+      - zakaz
+    patch:
+      operationId: partialUpdateZakaz
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this zakaz.
+        schema:
+          type: string
+      - name: search
+        required: false
+        in: query
+        description: A search term.
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Zakaz'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Zakaz'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Zakaz'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Zakaz'
+          description: ''
+      tags:
+      - zakaz
+    delete:
+      operationId: destroyZakaz
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this zakaz.
+        schema:
+          type: string
+      - name: search
+        required: false
+        in: query
+        description: A search term.
+        schema:
+          type: string
+      responses:
+        '204':
+          description: ''
+      tags:
+      - zakaz
+  /kansultatsi:
+    get:
+      operationId: listKansultatsis
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Kansultatsiy'
+          description: ''
+      tags:
+      - kansultatsi
+    post:
+      operationId: createKansultatsi
+      description: ''
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Kansultatsiy'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Kansultatsiy'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Kansultatsiy'
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Kansultatsiy'
+          description: ''
+      tags:
+      - kansultatsi
+  /kansultatsi/{id}:
+    get:
+      operationId: retrieveKansultatsi
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this kansultatsi.
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Kansultatsiy'
+          description: ''
+      tags:
+      - kansultatsi
+    put:
+      operationId: updateKansultatsi
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this kansultatsi.
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Kansultatsiy'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Kansultatsiy'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Kansultatsiy'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Kansultatsiy'
+          description: ''
+      tags:
+      - kansultatsi
+    patch:
+      operationId: partialUpdateKansultatsi
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this kansultatsi.
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Kansultatsiy'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Kansultatsiy'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Kansultatsiy'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Kansultatsiy'
+          description: ''
+      tags:
+      - kansultatsi
+    delete:
+      operationId: destroyKansultatsi
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this kansultatsi.
+        schema:
+          type: string
+      responses:
+        '204':
+          description: ''
+      tags:
+      - kansultatsi
+  /kategoriya:
+    get:
+      operationId: listKategoriyas
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Kategotiya'
+          description: ''
+      tags:
+      - kategoriya
+    post:
+      operationId: createKategoriya
+      description: ''
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Kategotiya'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Kategotiya'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Kategotiya'
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Kategotiya'
+          description: ''
+      tags:
+      - kategoriya
+  /kategoriya/{id}:
+    get:
+      operationId: retrieveKategoriya
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this kategoriya.
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Kategotiya'
+          description: ''
+      tags:
+      - kategoriya
+    put:
+      operationId: updateKategoriya
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this kategoriya.
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Kategotiya'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Kategotiya'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Kategotiya'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Kategotiya'
+          description: ''
+      tags:
+      - kategoriya
+    patch:
+      operationId: partialUpdateKategoriya
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this kategoriya.
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Kategotiya'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Kategotiya'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Kategotiya'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Kategotiya'
+          description: ''
+      tags:
+      - kategoriya
+    delete:
+      operationId: destroyKategoriya
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this kategoriya.
+        schema:
+          type: string
+      responses:
+        '204':
+          description: ''
+      tags:
+      - kategoriya
+  /asosiy:
+    get:
+      operationId: listAsosiys
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Asosiy'
+          description: ''
+      tags:
+      - asosiy
+    post:
+      operationId: createAsosiy
+      description: ''
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Asosiy'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Asosiy'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Asosiy'
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Asosiy'
+          description: ''
+      tags:
+      - asosiy
+  /asosiy/{id}:
+    get:
+      operationId: retrieveAsosiy
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this asosiy.
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Asosiy'
+          description: ''
+      tags:
+      - asosiy
+    put:
+      operationId: updateAsosiy
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this asosiy.
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Asosiy'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Asosiy'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Asosiy'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Asosiy'
+          description: ''
+      tags:
+      - asosiy
+    patch:
+      operationId: partialUpdateAsosiy
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this asosiy.
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Asosiy'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Asosiy'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Asosiy'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Asosiy'
+          description: ''
+      tags:
+      - asosiy
+    delete:
+      operationId: destroyAsosiy
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this asosiy.
+        schema:
+          type: string
+      responses:
+        '204':
+          description: ''
+      tags:
+      - asosiy
+  /customs:
+    get:
+      operationId: listCustoms
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Customs'
+          description: ''
+      tags:
+      - customs
+    post:
+      operationId: createCustoms
+      description: ''
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Customs'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Customs'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Customs'
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Customs'
+          description: ''
+      tags:
+      - customs
+  /customs/{id}:
+    get:
+      operationId: retrieveCustoms
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this customs.
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Customs'
+          description: ''
+      tags:
+      - customs
+    put:
+      operationId: updateCustoms
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this customs.
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Customs'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Customs'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Customs'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Customs'
+          description: ''
+      tags:
+      - customs
+    patch:
+      operationId: partialUpdateCustoms
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this customs.
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Customs'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Customs'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Customs'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Customs'
+          description: ''
+      tags:
+      - customs
+    delete:
+      operationId: destroyCustoms
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this customs.
+        schema:
+          type: string
+      responses:
+        '204':
+          description: ''
+      tags:
+      - customs
+  /tokens:
+    post:
+      operationId: createCustomUser
+      description: ''
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/User'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/User'
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+          description: ''
+      tags:
+      - tokens
+  /auth-token/:
+    post:
+      operationId: createTokenObtainPair
+      description: 'Takes a set of user credentials and returns an access and refresh
+        JSON web
+
+        token pair to prove the authentication of those credentials.'
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TokenObtainPair'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/TokenObtainPair'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/TokenObtainPair'
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TokenObtainPair'
+          description: ''
+      tags:
+      - auth-token
+  /auth-verify/:
+    post:
+      operationId: createTokenVerify
+      description: 'Takes a token and indicates if it is valid.  This view provides
+        no
+
+        information about a token''s fitness for a particular use.'
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TokenVerify'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/TokenVerify'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/TokenVerify'
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TokenVerify'
+          description: ''
+      tags:
+      - auth-verify
+  /auth-refresh/:
+    post:
+      operationId: createTokenRefresh
+      description: 'Takes a refresh type JSON web token and returns an access type
+        JSON web
+
+        token if the refresh token is valid.'
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TokenRefresh'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/TokenRefresh'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/TokenRefresh'
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TokenRefresh'
+          description: ''
+      tags:
+      - auth-refresh
+components:
+  schemas:
+    User1:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        username:
+          type: string
+          maxLength: 50
+        password:
+          type: string
+          maxLength: 128
+        is_active:
+          type: boolean
+        is_staff:
+          type: boolean
+        is_superuser:
+          type: boolean
+      required:
+      - username
+      - password
+    Karkas:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        img:
+          type: string
+          format: binary
+        eskiNarh:
+          type: string
+          maxLength: 300
+        hozirgiNarh:
+          type: string
+          maxLength: 300
+        nechtaligi:
+          type: string
+          maxLength: 300
+        ramkaRu:
+          type: string
+          maxLength: 200
+        razmer:
+          type: string
+          maxLength: 300
+        chuqurligi:
+          type: string
+          maxLength: 300
+        commentUZ:
+          type: string
+          maxLength: 3000
+        commentRU:
+          type: string
+          maxLength: 3000
+        ramkaUz:
+          type: string
+          maxLength: 20
+        kamplektatsiyARu1:
+          type: string
+          maxLength: 200
+        kamplektatsiyAUz:
+          type: string
+          maxLength: 200
+        categoriya:
+          type: string
+          maxLength: 200
+        modul:
+          type: integer
+      required:
+      - img
+      - eskiNarh
+      - hozirgiNarh
+      - nechtaligi
+      - ramkaRu
+      - razmer
+      - chuqurligi
+      - commentUZ
+      - commentRU
+      - ramkaUz
+      - kamplektatsiyARu1
+      - kamplektatsiyAUz
+      - categoriya
+      - modul
+    Naduvnie:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        img:
+          type: string
+          format: binary
+        eskiNarh:
+          type: string
+          maxLength: 300
+        hozirgiNarh:
+          type: string
+          maxLength: 300
+        nechtaligi:
+          type: string
+          maxLength: 300
+        ramkaRu:
+          type: string
+          maxLength: 200
+        razmer:
+          type: string
+          maxLength: 300
+        chuqurligi:
+          type: string
+          maxLength: 300
+        comment:
+          type: string
+          maxLength: 3000
+        ramkaUz:
+          type: string
+          maxLength: 20
+        kamplektatsiyARu1:
+          type: string
+          maxLength: 200
+        kamplektatsiyAUz:
+          type: string
+          maxLength: 200
+        categoriya:
+          type: string
+          maxLength: 200
+      required:
+      - img
+      - eskiNarh
+      - hozirgiNarh
+      - nechtaligi
+      - ramkaRu
+      - razmer
+      - chuqurligi
+      - comment
+      - ramkaUz
+      - kamplektatsiyARu1
+      - kamplektatsiyAUz
+      - categoriya
+    Zakaz:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        client_name:
+          type: string
+          maxLength: 200
+        telNumber:
+          type: string
+          maxLength: 200
+        poolFrame:
+          type: string
+          maxLength: 200
+        money:
+          type: string
+          maxLength: 200
+        address:
+          type: string
+          maxLength: 200
+        date_time:
+          type: string
+          format: date
+        image:
+          type: string
+          format: binary
+        active:
+          type: boolean
+        count:
+          type: integer
+        product_name:
+          type: integer
+      required:
+      - client_name
+      - telNumber
+      - poolFrame
+      - money
+      - address
+      - date_time
+      - image
+      - product_name
+    Kansultatsiy:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        name_Klent:
+          type: string
+          maxLength: 300
+        telNumberKlent:
+          type: string
+          maxLength: 300
+        date_time:
+          type: string
+          format: date
+        active:
+          type: boolean
+      required:
+      - name_Klent
+      - telNumberKlent
+      - date_time
+    Kategotiya:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        title:
+          type: string
+          maxLength: 300
+        description:
+          type: string
+          maxLength: 400
+        CategoriyaName:
+          type: string
+          maxLength: 200
+      required:
+      - title
+      - description
+    Asosiy:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        adminTel:
+          type: string
+          maxLength: 100
+        telegramLink:
+          type: string
+          format: uri
+          maxLength: 100
+          pattern: "^(?:[a-z0-9.+-]*)://(?:[^\\s:@/]+(?::[^\\s:@/]*)?@)?(?:(?:0|25[0-5]|2[0-4]\\\
+            d|1\\d?\\d?|[1-9]\\d?)(?:\\.(?:0|25[0-5]|2[0-4]\\d|1\\d?\\d?|[1-9]\\d?)){3}|\\\
+            [[0-9a-f:.]+\\]|([a-z\xA1-\uFFFF0-9](?:[a-z\xA1-\uFFFF0-9-]{0,61}[a-z\xA1\
+            -\uFFFF0-9])?(?:\\.(?!-)[a-z\xA1-\uFFFF0-9-]{1,63}(?<!-))*\\.(?!-)(?:[a-z\xA1\
+            -\uFFFF-]{2,63}|xn--[a-z0-9]{1,59})(?<!-)\\.?|localhost))(?::\\d{1,5})?(?:[/?#][^\\\
+            s]*)?\\z"
+        instagramLink:
+          type: string
+          format: uri
+          maxLength: 100
+          pattern: "^(?:[a-z0-9.+-]*)://(?:[^\\s:@/]+(?::[^\\s:@/]*)?@)?(?:(?:0|25[0-5]|2[0-4]\\\
+            d|1\\d?\\d?|[1-9]\\d?)(?:\\.(?:0|25[0-5]|2[0-4]\\d|1\\d?\\d?|[1-9]\\d?)){3}|\\\
+            [[0-9a-f:.]+\\]|([a-z\xA1-\uFFFF0-9](?:[a-z\xA1-\uFFFF0-9-]{0,61}[a-z\xA1\
+            -\uFFFF0-9])?(?:\\.(?!-)[a-z\xA1-\uFFFF0-9-]{1,63}(?<!-))*\\.(?!-)(?:[a-z\xA1\
+            -\uFFFF-]{2,63}|xn--[a-z0-9]{1,59})(?<!-)\\.?|localhost))(?::\\d{1,5})?(?:[/?#][^\\\
+            s]*)?\\z"
+        ishVaqtiRU:
+          type: string
+          maxLength: 100
+        ishVaqtiUZ:
+          type: string
+          maxLength: 100
+        manzilRU:
+          type: string
+          maxLength: 100
+        manzilUZ:
+          type: string
+          maxLength: 100
+      required:
+      - adminTel
+      - telegramLink
+      - instagramLink
+      - ishVaqtiRU
+      - ishVaqtiUZ
+      - manzilRU
+      - manzilUZ
+    Customs:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+          maxLength: 30
+        phone:
+          type: string
+          maxLength: 40
+        address:
+          type: string
+          maxLength: 50
+      required:
+      - name
+      - phone
+      - address
+    User:
+      type: object
+      properties:
+        username:
+          type: string
+        password:
+          type: string
+      required:
+      - username
+      - password
+    TokenObtainPair:
+      type: object
+      properties:
+        username:
+          type: string
+        password:
+          type: string
+          writeOnly: true
+      required:
+      - username
+      - password
+    TokenVerify:
+      type: object
+      properties:
+        token:
+          type: string
+      required:
+      - token
+    TokenRefresh:
+      type: object
+      properties:
+        refresh:
+          type: string
+        access:
+          type: string
+          readOnly: true
+      required:
+      - refresh

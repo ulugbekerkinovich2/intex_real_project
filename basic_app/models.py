@@ -5,6 +5,9 @@ from django.utils import timezone
 from django.utils.translation import gettext as _
 
 from django.contrib.auth.models import BaseUserManager, AbstractBaseUser, PermissionsMixin
+from django.db.models import F
+from django.db.models.signals import post_save
+from django.dispatch import receiver
 
 
 class CustomUserManager(BaseUserManager):
@@ -77,14 +80,14 @@ class Karkas(models.Model):
     modul = models.ForeignKey(Kategoriya, on_delete=models.CASCADE, null=False)
 
     def __str__(self):
-        return self.nechtaligi
+        return f"soni: {self.nechtaligi}\nrasmi: {self.img}\n"
 
 
 class Naduvnie(models.Model):
     img = models.ImageField(upload_to='images/', null=False)
     eskiNarh = models.CharField(max_length=300, null=False)
     hozirgiNarh = models.CharField(max_length=300, null=False)
-    nechtaligi = models.CharField(max_length=300, null=False)
+    nechtaligi = models.CharField(max_length=300, null=False)  #############
     ramkaRu = models.CharField(max_length=200, null=False)
     razmer = models.CharField(max_length=300, null=False)
     chuqurligi = models.CharField(max_length=300, null=False)
@@ -115,9 +118,9 @@ class Zakaz(models.Model):
     address = models.CharField(max_length=200)
     date_time = models.DateField()
     image = models.ImageField(upload_to='images/')
-    active = models.BooleanField(default=False)
-    product_name = models.ForeignKey(Karkas, on_delete=models.CASCADE)
-    customer = models.ForeignKey(Customs, on_delete=models.CASCADE)
+    active = models.BooleanField(default=False)  #########
+    product_name = models.ForeignKey(Karkas, on_delete=models.CASCADE)  #######
+    count = models.IntegerField(default='none')
 
     def __str__(self):
         return f'{self.active}'
@@ -144,3 +147,10 @@ class Asosiy(models.Model):
 
     def __str__(self):
         return self.adminTel
+
+
+@receiver(post_save, sender=Zakaz)
+def sub_count(sender, instance, *args, **kwargs):
+    if instance.active:
+        Karkas.objects.filter(id=instance.product_name.id).update(nechtaligi=F('nechtaligi') - instance.count)
+        # Karkas.objects.filter(id=instance.product.name.id).update(eskiNarh=F('eskiNarh') + instance.hozirgiNarh)

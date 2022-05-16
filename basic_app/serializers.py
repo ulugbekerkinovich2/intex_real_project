@@ -2,6 +2,7 @@ from rest_framework import serializers
 
 from . import models
 from .models import CustomUser, Karkas, Naduvnie, Zakaz, Kansultatsi, Kategoriya, Asosiy, Customs
+from django.db.models import F
 
 
 class UserSerializer(serializers.Serializer):
@@ -23,10 +24,25 @@ class UserSerializer1(serializers.ModelSerializer):
         return models.CustomUser.objects.create_user(**validated_data)
 
 
+import requests
+
+API_TOKEN = '5082135962:AAF8nrZbyM1DQ1RHYse5t0X3F40vTpYsssA'
+
+
 class KarkasSerializer(serializers.ModelSerializer):
     class Meta:
         model = Karkas
         fields = '__all__'
+
+    # def create(self, validated_data):
+    #     ob = models.Karkas.objects.create(**validated_data)
+    #     print(ob)
+    #     chats = [935920479]
+    #     # a = [1, 2, 3]
+    #     for id in chats:
+    #         requests.get(
+    #             url=f"https://api.telegram.org/bot5082135962:AAF8nrZbyM1DQ1RHYse5t0X3F40vTpYsssA/sendMessage?chat_id={id}&parse_mode=HTML&text={ob}")
+    #     return ob
 
 
 class NaduvnieSerializer(serializers.ModelSerializer):

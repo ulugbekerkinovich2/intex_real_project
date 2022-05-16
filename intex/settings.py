@@ -25,13 +25,10 @@ CORS_ALLOWED_ORIGINS = [
     "https://google.com",
     "http://localhost:8080",
     "http://localhost:3000",
-    "http://localhost:3000/",
     "https://intex-market.uz",
     "http://intex-market.uz",
     "https://admin.intex-market.uz",
     "https://www.intex-market.uz",
-    "https://admin-intex-market.netlify.app/",
-    "https://admin-intex-market.netlify.app/login",
 
 ]
 CORS_ALLOW_ALL_ORIGINS = True
@@ -48,7 +45,9 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework_simplejwt',
     'django_cleanup',
-    'django_filters'
+    'django_filters',
+    "corsheaders",
+
 ]
 
 MIDDLEWARE = [
@@ -160,7 +159,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Tashkent'
 
 USE_I18N = True
 

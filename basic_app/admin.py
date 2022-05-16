@@ -1,7 +1,10 @@
 from django.contrib import admin
-from basic_app import models
+
+# from basic_app import models
 
 # Register your models here.
+from basic_app import models
+
 admin.site.register(models.Zakaz)
 admin.site.register(models.Naduvnie)
 admin.site.register(models.Kansultatsi)
