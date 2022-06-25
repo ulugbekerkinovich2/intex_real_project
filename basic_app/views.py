@@ -24,19 +24,6 @@ class DetailCustomUser(generics.RetrieveUpdateDestroyAPIView):
     queryset = models.CustomUser.objects.all()
     serializer_class = serializers.UserPasswordSerializer
 
-    # @api_view(['PATCH'])
-    # @permission_classes([permissions.IsAuthenticated])
-    # def patch(request):
-    #     if request.method == 'PATCH':
-    #         serializer = UserSerializer1(request.CustomUser, data=request.data, partial=True)
-    #         if serializer.is_valid():
-    #             serializer.save()
-    #         return Response(status=status.HTTP_201_CREATED)
-    #     return Response(status=status.HTTP_400_BAD_REQUEST)
-    # def partial_update(self, request, *args, **kwargs):
-    #     kwargs['partial'] = True
-    #     return self.update(request, *args, **kwargs)
-
 
 class ListKarkas(generics.ListCreateAPIView):
     queryset = models.Karkas.objects.filter(nechtaligi__gte=1)
@@ -59,21 +46,8 @@ class DetailNaduvnie(generics.RetrieveUpdateDestroyAPIView):
 
 
 class ListZakaz(generics.ListCreateAPIView):
-    # queryset = models.Zakaz.objects.filter(active='True')
     queryset = models.Zakaz.objects.all()
     serializer_class = serializers.ZakazSerializer
-
-    # m = models.Karkas.objects.filter(nechtaligi__gte=1)
-    #
-    # print(queryset)
-    # a = models.Zakaz.objects.filter(active="True").count()
-    # print(a)
-    # if queryset:
-    #     a1 = a - 1
-    #
-    #     print(a1)
-    #     v = models.Zakaz.objects.filter().delete()
-    #     print(a1)
 
     filter_backends = [filters.SearchFilter]
     search_fields = ['date_time']
