@@ -1,4 +1,7 @@
-from rest_framework import serializers
+from rest_framework import serializers, permissions, status
+from rest_framework.decorators import api_view, permission_classes
+from rest_framework.response import Response
+from rest_framework.serializers import ModelSerializer
 
 from . import models
 from .models import CustomUser, Karkas, Naduvnie, Zakaz, Kansultatsi, Kategoriya, Asosiy, Customs
@@ -6,8 +9,8 @@ from django.db.models import F
 
 
 class UserSerializer(serializers.Serializer):
-    username = serializers.CharField()
-    password = serializers.CharField()
+    username = serializers.CharField(style={'input_type': 'username'})
+    password = serializers.CharField(style={'input_type': 'password'})
     # is_active = serializers.BooleanField()
     # is_staff = serializers.BooleanField()
     # is_superuser = serializers.BooleanField()
@@ -22,6 +25,32 @@ class UserSerializer1(serializers.ModelSerializer):
 
     def create(self, validated_data):
         return models.CustomUser.objects.create_user(**validated_data)
+
+    # def update(self, instance, validated_data):
+    #     return models.CustomUser.objects.make_password(validated_data, instance, self)
+
+
+class UserPasswordSerializer(ModelSerializer):
+    class Meta:
+        model = CustomUser
+        fields = [
+            'password',
+            'username',
+        ]
+
+        extra_kwargs = {
+            "password": {"write_only": True},
+            "username": {"write_only": True},
+        }
+
+    def update(self, instance, validated_data):
+        for attr, value in validated_data.items():
+            if attr == 'password':
+                instance.set_password(value)
+            else:
+                setattr(instance, attr, value)
+        instance.save()
+        return instance
 
 
 import requests

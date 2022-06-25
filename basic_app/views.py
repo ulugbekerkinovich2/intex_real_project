@@ -3,10 +3,12 @@ from django.contrib.auth import authenticate
 from django.db.models import Count
 from django.shortcuts import render
 from django_filters.rest_framework import DjangoFilterBackend
+from rest_framework.decorators import api_view, permission_classes
 from rest_framework.response import Response
-from rest_framework import generics, filters
+from rest_framework import generics, filters, permissions, status
 
 from . import serializers, models
+from .serializers import UserSerializer1
 
 
 def index(request):
@@ -20,16 +22,25 @@ class ListCustomUser(generics.ListCreateAPIView):
 
 class DetailCustomUser(generics.RetrieveUpdateDestroyAPIView):
     queryset = models.CustomUser.objects.all()
-    serializer_class = serializers.UserSerializer1
+    serializer_class = serializers.UserPasswordSerializer
+
+    # @api_view(['PATCH'])
+    # @permission_classes([permissions.IsAuthenticated])
+    # def patch(request):
+    #     if request.method == 'PATCH':
+    #         serializer = UserSerializer1(request.CustomUser, data=request.data, partial=True)
+    #         if serializer.is_valid():
+    #             serializer.save()
+    #         return Response(status=status.HTTP_201_CREATED)
+    #     return Response(status=status.HTTP_400_BAD_REQUEST)
+    # def partial_update(self, request, *args, **kwargs):
+    #     kwargs['partial'] = True
+    #     return self.update(request, *args, **kwargs)
 
 
 class ListKarkas(generics.ListCreateAPIView):
     queryset = models.Karkas.objects.filter(nechtaligi__gte=1)
-    # queryset1 = models.Karkas.objects.filter('ramkaRu')
     serializer_class = serializers.KarkasSerializer
-
-    # print(queryset)
-    # print(queryset1)
 
 
 class DetailKarkas(generics.RetrieveUpdateDestroyAPIView):
@@ -108,7 +119,7 @@ class GetCustomToken(generics.GenericAPIView):
                     return Response({
                         'refresh': str(refresh),
                         'access': str(refresh.access_token),
-                        # 'is_active': str(user.is_active),
+                        'username': str(user.username),
                         # 'is_staff': str(user.is_staff),
                         # 'is_superuser': str(user.is_superuser)
 

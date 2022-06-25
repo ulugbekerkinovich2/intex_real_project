@@ -31,9 +31,9 @@ CORS_ALLOWED_ORIGINS = [
     "https://admin.intex-market.uz",
     "https://www.intex-market.uz",
 
+# Application definition
 ]
 CORS_ALLOW_ALL_ORIGINS = True
-# Application definition
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -93,6 +93,7 @@ REST_FRAMEWORK = {
     ],
     'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend', ],
 }
+
 APPEND_SLASH = False
 
 SIMPLE_JWT = {
