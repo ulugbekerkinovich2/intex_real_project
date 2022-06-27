@@ -6,7 +6,7 @@ from rest_framework_simplejwt.views import TokenObtainPairView, TokenVerifyView,
 from . import views
 
 urlpatterns = [
-    path('user/', views.ListCustomUser.as_view()),
+    path('user/', views.ListCustomUser.as_view(), name='customuer'),
     path('user/<int:pk>', views.DetailCustomUser.as_view()),
     path('tokens/', views.GetCustomToken.as_view()),
     path('product/', views.ListKarkas.as_view()),
@@ -32,3 +32,8 @@ urlpatterns = [
 
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+
+
+
+

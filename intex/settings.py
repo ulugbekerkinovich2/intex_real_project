@@ -31,7 +31,7 @@ CORS_ALLOWED_ORIGINS = [
     "https://admin.intex-market.uz",
     "https://www.intex-market.uz",
 
-# Application definition
+    # Application definition
 ]
 CORS_ALLOW_ALL_ORIGINS = True
 
