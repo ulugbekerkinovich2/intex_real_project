@@ -104,8 +104,9 @@ class AsosiySerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
-
 class CustomsSerializer(serializers.ModelSerializer):
     class Meta:
         model = Customs
         fields = '__all__'
+
+
